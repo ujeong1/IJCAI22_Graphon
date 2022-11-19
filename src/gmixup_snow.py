@@ -276,7 +276,7 @@ if __name__ == '__main__':
     idx_1st_aug = np.arange(idx_van[-1]+1, K*num_classes+num_classes*num_augs*1+1)
     idx_2nd_aug = np.arange(idx_1st_aug[-1]+1, K*num_classes+num_classes*num_augs*2+1)
     del dataset[:train_nums]
-    del train_dataset[idx_1st_aug[0]:idx_1st_aug[-1]]
+    #del train_dataset[idx_1st_aug[0]:idx_1st_aug[-1]]
     train_dataset = train_dataset + new_graph
     dataset = train_dataset + dataset
     train_nums = len(train_dataset)
@@ -284,7 +284,7 @@ if __name__ == '__main__':
 
     print("*" * 100)
     print("synthetic graphs:", len(new_graph))
-    # print("- first augmentation ", num_augs * num_classes)
+    print("- first augmentation ", num_augs * num_classes)
     print("- second snowball augmentation ", num_augs * num_classes)
     print("original training graphs (K-shot):", K * num_classes)
     print("final train num", train_nums)
